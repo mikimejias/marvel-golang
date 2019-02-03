@@ -151,9 +151,6 @@ func drawInterfaceSearch() {
 ============================================== */
 func main() {
 
-	//link := setLinkHash()
-	//fmt.Println(link)
-
 	text = ""
 
 	res, err := http.Get(setLinkHash(text))
@@ -165,14 +162,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//Mostrar todos los datos de la api
-	//fmt.Println(string(responseData))
-
+	
 	json.Unmarshal(responseData, &responseObject)
-
-	fmt.Println(responseObject.Code)
-	fmt.Println(responseObject.Status)
-	fmt.Println(len(responseObject.Data.Heroe))
 
 	drawInterface()
 
